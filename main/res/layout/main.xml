@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".Main"
+    android:background="@drawable/background">
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:background="#E4DEDE"
+            android:id="@+id/frameLayout"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/signup"
+                android:id="@+id/signup"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/upper"
+            />
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"
+                android:id="@+id/phone_number"
+                android:hint="@string/number"
+                android:textStyle="italic"
+                android:background="#F0EDED"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+            />
+
+    </FrameLayout>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/upper"
+            android:layout_gravity="left|top"
+            android:layout_above="@+id/frameLayout"
+            android:layout_alignLeft="@+id/frameLayout"
+            android:layout_alignRight="@+id/frameLayout"
+            android:src="@drawable/layer"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_above="@+id/frameLayout"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            android:textAlignment="center"
+            android:layout_alignLeft="@+id/frameLayout"
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_alignRight="@+id/imageView3"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="@string/number_prompt"
+            android:layout_marginTop="5dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:id="@+id/textView4"
+            android:typeface="serif"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:textAlignment="center"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/layer"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:id="@+id/imageView2"
+            android:src="@drawable/layer"
+            android:layout_alignRight="@+id/imageView3"
+            android:layout_below="@+id/textView4"
+            android:layout_alignLeft="@+id/imageView3"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/imageView4"
+            android:src="@drawable/upper"
+            android:layout_below="@+id/frameLayout"
+            android:layout_alignLeft="@+id/frameLayout"
+            android:layout_alignRight="@+id/frameLayout"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:background="@drawable/upper"/>
+
+</RelativeLayout>
