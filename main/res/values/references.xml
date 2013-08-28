@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name = "maps">http://mobiforge.com/developing/story/developing-with-google-maps-v2-android</item>
+    <item name="refgoogleservices">http://stackoverflow.com/questions/16596715/how-can-i-create-an-android-application-in-android-studio-that-uses-the-google-m</item>
+</resources>
