@@ -2,4 +2,5 @@
 <resources>
     <item name = "maps">http://mobiforge.com/developing/story/developing-with-google-maps-v2-android</item>
     <item name="refgoogleservices">http://stackoverflow.com/questions/16596715/how-can-i-create-an-android-application-in-android-studio-that-uses-the-google-m</item>
+    <item name="location">https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/MapFragment</item>
 </resources>
