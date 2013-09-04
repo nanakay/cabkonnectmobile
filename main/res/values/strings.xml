@@ -22,5 +22,6 @@
     <string name = "verify_text">verification code</string>
     <string name="driver">I\'m a driver</string>
     <string name="passenger">I\'m a passenger</string>
+    <string name="destination_hint">Where are you going to?</string>
 
 </resources>

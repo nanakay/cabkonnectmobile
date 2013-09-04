@@ -23,5 +23,33 @@
           class="com.google.android.gms.maps.SupportMapFragment"
           tools:layout="@layout/home"/>
 
+    <!--<TextView-->
+        <!--android:id="@+id/current_location_label"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Current Location"-->
+        <!--/>-->
+
+    <EditText
+        android:id="@+id/current_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:id="@+id/destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/destination_hint"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/get_cab_btn"
+        android:text="Get Cab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"/>
 
 </RelativeLayout>

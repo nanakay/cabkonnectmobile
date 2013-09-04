@@ -1,6 +1,8 @@
 package com.fourapps.cabkonnect;
 
+import android.content.Context;
 import android.content.IntentSender;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import android.location.Location;
 import android.graphics.Color;
+import android.location.LocationListener;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
@@ -31,10 +34,31 @@ class Home_Backup extends FragmentActivity implements
         GooglePlayServicesClient.OnConnectionFailedListener {
     GoogleMap map;
     private LocationClient mLocationClient;
-    Location currentLocation;
-
     private static final LatLng GOLDEN_GATE_BRIDGE = new LatLng(37.828891,-122.485884);
     private static final LatLng APPLE = new LatLng(37.3325004578, -122.03099823);
+    Location currentLocation;
+    LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            currentLocation = location;
+            setUserLocation();
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+
+        }
+    };
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +69,16 @@ class Home_Backup extends FragmentActivity implements
         if (map == null) {
             Toast.makeText(this, "Google maps not available", Toast.LENGTH_LONG).show();
         }
+        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, mLocationListener);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setUpLocationClientIfNeeded();
+        mLocationClient.connect();
+
     }
 
     @Override
@@ -175,13 +209,14 @@ class Home_Backup extends FragmentActivity implements
         map.setMyLocationEnabled(true);
         LatLng myLatLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
 
-        CameraPosition myPosition = new CameraPosition.Builder().target(myLatLng).zoom(10).bearing(90).tilt(30).build();
+        CameraPosition myPosition = new CameraPosition.Builder().target(myLatLng).zoom(16).bearing(90).tilt(30).build();
         map.animateCamera(CameraUpdateFactory.newCameraPosition(myPosition));
 
         MarkerOptions markerOpts = new MarkerOptions().position(myLatLng).title(
                 "Your Current Location");
         map.addMarker(markerOpts);
     }
+
 }
 
 
